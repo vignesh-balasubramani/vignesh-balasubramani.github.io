@@ -9,59 +9,38 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <style>
-    body {
-      background-color: #f5f5f5;
-      color: #212121;
-      font-family: 'Roboto', sans-serif;
-    }
-    .cover-image {
-      width: 100%;
-      height: 300px;
-      background: url('assets/img/project-autonomous-driving.jpeg') center center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .cover-title {
-      text-align: center;
-      color: white;
-      background-color: rgba(0,0,0,0.6);
-      padding: 20px 30px;
-      border-radius: 10px;
-      font-size: 2.5rem;
-      font-weight: 600;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-    }
-    .section-title {
-      margin-top: 40px;
-      font-size: 1.8rem;
-      font-weight: 500;
-    }
-    .content-wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 200px;
-    }
-    @media screen and (max-width: 992px) {
-      .content-wrapper {
-        padding: 0 30px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-wrapper teal">
+      <a href="/" class="brand-logo" style="margin-left: 10px;">Vignesh</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#education">Education</a></li>
+        <li>
+          <a href="https://github.com/vignesh-balasubramani/Autonomous_driving_Reinforcement_Learning" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- Cover Section -->
-  <div class="cover-image">
-    <div class="cover-title">
+  <div class="cover-image" style="background: url('assets/img/project-autonomous-driving.jpeg') center center / cover no-repeat; height: 300px; display: flex; align-items: center; justify-content: center;">
+    <div class="cover-title" style="text-align: center; color: white; background-color: rgba(0,0,0,0.6); padding: 20px 30px; border-radius: 10px; font-size: 2.5rem; font-weight: 600; font-family: 'Roboto', sans-serif; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);">
       Autonomous Driving using Reinforcement Learning
     </div>
   </div>
 
   <!-- Main Content -->
-  <div class="container section content-wrapper">
+  <main class="container section content-wrapper">
     <h5 class="section-title">Overview</h5>
     <p>
       This project demonstrates how to train a self-driving race car using Q-learning, DDQN, and DDPG within a custom Pygame simulation. The agent learns to drive autonomously using only simulated sensor data and a reward signal.
@@ -145,7 +124,7 @@
         ← Back to Projects
       </a>
     </div>
-  </div>
+  </main>
 
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

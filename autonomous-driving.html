@@ -3,41 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <title>Autonomous Driving with RL – Vignesh Balasubramani</title>
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
+
 <body>
-  <div class="container">
-    <h2 class="teal-text">Autonomous Driving Simulation using Reinforcement Learning</h2>
-    <p>This project demonstrates how to train a self-driving car to navigate racetracks using various <strong>Reinforcement Learning (RL)</strong> algorithms—<strong>Q-learning</strong>, <strong>Deep Double Q-Learning (DDQN)</strong>, and <strong>Deep Deterministic Policy Gradient (DDPG)</strong>—within a custom-built <strong>Pygame simulation</strong>.</p>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-wrapper teal">
+      <a href="/" class="brand-logo" style="margin-left: 10px;">Vignesh</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="https://github.com/vignesh-balasubramani/autonomous-driving-rl" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h4>Algorithms Implemented</h4>
-    <ul>
-      <li><b>Q-Learning:</b> Tabular RL with discrete actions and states (based on ray sensors and angle to goal).</li>
-      <li><b>DDQN:</b> Neural-network based value function with target network and epsilon-greedy exploration.</li>
-      <li><b>DDPG:</b> Actor-Critic model for continuous control using steering and throttle.</li>
+  <!-- Content -->
+  <div class="container section">
+    <h3 class="teal-text">Autonomous Driving using Reinforcement Learning</h3>
+    <p class="flow-text">A project to train a self-driving race car using Q-learning, DDQN, and DDPG in a Pygame simulation.</p>
+
+    <div class="divider"></div>
+
+    <h5><i class="fa fa-cogs"></i> Algorithms Used</h5>
+    <ul class="browser-default">
+      <li><b>Q-Learning</b>: Discrete state-action mapping using ray sensors and angle to goal.</li>
+      <li><b>DDQN</b>: Deep Q-learning with target networks and epsilon-greedy exploration.</li>
+      <li><b>DDPG</b>: Actor-Critic approach for continuous control of throttle and steering.</li>
     </ul>
 
-    <h4>Simulation Environment</h4>
-    <ul>
-      <li>Built in Pygame with TUM racetracks</li>
-      <li>Vehicle model: Single-track kinematic model</li>
-      <li>Sensors: Simulated LiDAR using ray casting</li>
-      <li>Reward System: Positive reward for forward motion, penalties for collisions, bonus for lap completion</li>
+    <h5><i class="fa fa-car"></i> Simulation Features</h5>
+    <ul class="browser-default">
+      <li>Custom-built environment using Pygame with TUM racetracks.</li>
+      <li>Vehicle uses single-track kinematic model with LiDAR-style ray sensors.</li>
+      <li>Reward system for staying on track, moving forward, and completing laps.</li>
     </ul>
 
-    <h4>Logging and Visualization</h4>
-    <ul>
-      <li><b>TensorBoard:</b> Tracks reward, loss, and performance curves</li>
-      <li><b>CSV:</b> Logs scores, episode duration, steps, distances</li>
-      <li><b>Visualization:</b> Path plots of vehicle movement using Matplotlib</li>
+    <div class="divider"></div>
+
+    <h5><i class="fa fa-line-chart"></i> Training Logs & Visualizations</h5>
+    <ul class="browser-default">
+      <li><b>TensorBoard</b>: Reward curves, loss curves, and performance metrics.</li>
+      <li><b>CSV logs</b>: Per-episode stats like score, distance, and duration.</li>
+      <li><b>Matplotlib plots</b>: Path visualizations of learned agent behavior.</li>
     </ul>
 
-    <h5>
-      🔗 <a href="https://github.com/vignesh-balasubramani/autonomous-driving-rl" target="_blank">GitHub Repository</a>
-    </h5>
+    <div class="divider"></div>
 
-    <p><a href="/" class="btn teal">← Back to Home</a></p>
+    <h5><i class="fa fa-picture-o"></i> Simulation Screenshots</h5>
+    <div class="row">
+      <div class="col s12 m6">
+        <img src="/assets/img/track-visual.png" class="responsive-img materialboxed" alt="TUM Track" />
+        <p class="center-align">TUM Racetrack</p>
+      </div>
+      <div class="col s12 m6">
+        <img src="/assets/img/agent-learning.gif" class="responsive-img materialboxed" alt="Agent Training" />
+        <p class="center-align">Agent Learning to Drive</p>
+      </div>
+      <div class="col s12 m6">
+        <img src="/assets/img/ddpg.gif" class="responsive-img materialboxed" alt="DDPG Output" />
+        <p class="center-align">DDPG: Smooth Driving Behavior</p>
+      </div>
+    </div>
+
+    <div class="section center-align">
+      <a href="https://github.com/vignesh-balasubramani/autonomous-driving-rl" target="_blank"
+         class="btn-large waves-effect waves-light teal">
+        <i class="fa fa-github left"></i> View Project on GitHub
+      </a>
+    </div>
+
+    <div class="section center-align">
+      <a href="/" class="btn-flat grey-text text-darken-2">
+        ← Back to Portfolio
+      </a>
+    </div>
   </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    });
+  </script>
 </body>
 </html>

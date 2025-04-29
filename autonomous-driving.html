@@ -4,84 +4,134 @@
   <meta charset="UTF-8" />
   <title>Autonomous Driving with RL – Vignesh Balasubramani</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Materialize CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    body {
+      background-color: #f5f5f5;
+      color: #212121;
+    }
+
+    .cover-image {
+      width: 100%;
+      height: 300px;
+      background: url('/assets/img/project-autonomous-driving.png') center center / cover no-repeat;
+      position: relative;
+    }
+
+    .cover-title {
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .section-title {
+      margin-top: 30px;
+    }
+
+    .content-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 200px; /* ≈ side-nav width on homepage */
+    }
+
+    @media screen and (max-width: 992px) {
+      .content-wrapper {
+        padding: 0 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Navigation -->
+  <!-- Navigation Bar -->
   <nav>
     <div class="nav-wrapper teal">
       <a href="/" class="brand-logo" style="margin-left: 10px;">Vignesh</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#about">About</a></li>
         <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#projects">Projects</a></li>
         <li><a href="/#skills">Skills</a></li>
-        <li><a href="https://github.com/vignesh-balasubramani/autonomous-driving-rl" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="/#education">Education</a></li>
+        <li>
+          <a href="https://github.com/vignesh-balasubramani/autonomous-driving-rl" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <!-- Content -->
-  <div class="container section">
-    <h3 class="teal-text">Autonomous Driving using Reinforcement Learning</h3>
-    <p class="flow-text">A project to train a self-driving race car using Q-learning, DDQN, and DDPG in a Pygame simulation.</p>
+  <!-- Cover Header -->
+  <div class="cover-image">
+    <div class="cover-title">
+      <h4>Autonomous Driving using Reinforcement Learning</h4>
+    </div>
+  </div>
 
-    <div class="divider"></div>
+  <!-- Main Content -->
+  <div class="container section content-wrapper">
+    <h5 class="section-title">Overview</h5>
+    <p>
+      This project demonstrates how to train a self-driving race car using Q-learning, DDQN, and DDPG within a custom Pygame simulation. The agent learns to drive autonomously using only simulated sensor data and a reward signal.
+    </p>
 
-    <h5><i class="fa fa-cogs"></i> Algorithms Used</h5>
+    <h5 class="section-title">Algorithms Implemented</h5>
     <ul class="browser-default">
-      <li><b>Q-Learning</b>: Discrete state-action mapping using ray sensors and angle to goal.</li>
-      <li><b>DDQN</b>: Deep Q-learning with target networks and epsilon-greedy exploration.</li>
-      <li><b>DDPG</b>: Actor-Critic approach for continuous control of throttle and steering.</li>
+      <li><b>Q-Learning:</b> Discrete state-action space with tabular learning.</li>
+      <li><b>DDQN:</b> Value-based deep RL with target networks and epsilon-greedy exploration.</li>
+      <li><b>DDPG:</b> Actor-critic method enabling continuous control over steering and throttle.</li>
     </ul>
 
-    <h5><i class="fa fa-car"></i> Simulation Features</h5>
+    <h5 class="section-title">Simulation Environment</h5>
     <ul class="browser-default">
-      <li>Custom-built environment using Pygame with TUM racetracks.</li>
-      <li>Vehicle uses single-track kinematic model with LiDAR-style ray sensors.</li>
-      <li>Reward system for staying on track, moving forward, and completing laps.</li>
+      <li>Custom-built in Pygame simulating a single-track vehicle on TUM racetracks.</li>
+      <li>Ray-based sensors simulate LiDAR for environmental perception.</li>
+      <li>Rewards for forward motion, staying on track, and completing laps; penalties for stalling or collisions.</li>
     </ul>
 
-    <div class="divider"></div>
-
-    <h5><i class="fa fa-line-chart"></i> Training Logs & Visualizations</h5>
+    <h5 class="section-title">Logging and Visualization</h5>
     <ul class="browser-default">
-      <li><b>TensorBoard</b>: Reward curves, loss curves, and performance metrics.</li>
-      <li><b>CSV logs</b>: Per-episode stats like score, distance, and duration.</li>
-      <li><b>Matplotlib plots</b>: Path visualizations of learned agent behavior.</li>
+      <li><b>TensorBoard</b> plots for reward, loss, and actor/critic behavior.</li>
+      <li><b>CSV logs</b> for episode-wise metrics like distance, steps, and cumulative rewards.</li>
+      <li><b>Matplotlib</b> used for vehicle path visualization and performance plots.</li>
     </ul>
 
-    <div class="divider"></div>
-
-    <h5><i class="fa fa-picture-o"></i> Simulation Screenshots</h5>
+    <h5 class="section-title">Simulation Screenshots</h5>
     <div class="row">
       <div class="col s12 m6">
         <img src="/assets/img/track-visual.png" class="responsive-img materialboxed" alt="TUM Track" />
-        <p class="center-align">TUM Racetrack</p>
+        <p class="center-align">TUM Racetrack and Sensor Rays</p>
       </div>
       <div class="col s12 m6">
-        <img src="/assets/img/agent-learning.gif" class="responsive-img materialboxed" alt="Agent Training" />
-        <p class="center-align">Agent Learning to Drive</p>
+        <img src="/assets/img/agent-learning.gif" class="responsive-img materialboxed" alt="Training Visualization" />
+        <p class="center-align">Agent Learning – Q-table Exploration</p>
       </div>
       <div class="col s12 m6">
         <img src="/assets/img/ddpg.gif" class="responsive-img materialboxed" alt="DDPG Output" />
-        <p class="center-align">DDPG: Smooth Driving Behavior</p>
+        <p class="center-align">DDPG – Smooth Driving with Continuous Actions</p>
       </div>
     </div>
 
     <div class="section center-align">
       <a href="https://github.com/vignesh-balasubramani/autonomous-driving-rl" target="_blank"
          class="btn-large waves-effect waves-light teal">
-        <i class="fa fa-github left"></i> View Project on GitHub
+        <i class="fa fa-github left"></i> View GitHub Repository
       </a>
     </div>
 
     <div class="section center-align">
-      <a href="/" class="btn-flat grey-text text-darken-2">
-        ← Back to Portfolio
+      <a href="/#projects" class="btn-flat grey-text text-darken-2">
+        ← Back to Projects
       </a>
     </div>
   </div>
@@ -89,9 +139,9 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
+      M.Materialbox.init(elems);
     });
   </script>
 </body>

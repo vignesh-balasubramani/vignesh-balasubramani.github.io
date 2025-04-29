@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Autonomous Driving with RL – Vignesh Balasubramani</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+</head>
+<body>
+  <div class="container">
+    <h2 class="teal-text">Autonomous Driving Simulation using Reinforcement Learning</h2>
+    <p>This project demonstrates how to train a self-driving car to navigate racetracks using various <strong>Reinforcement Learning (RL)</strong> algorithms—<strong>Q-learning</strong>, <strong>Deep Double Q-Learning (DDQN)</strong>, and <strong>Deep Deterministic Policy Gradient (DDPG)</strong>—within a custom-built <strong>Pygame simulation</strong>.</p>
+
+    <h4>Algorithms Implemented</h4>
+    <ul>
+      <li><b>Q-Learning:</b> Tabular RL with discrete actions and states (based on ray sensors and angle to goal).</li>
+      <li><b>DDQN:</b> Neural-network based value function with target network and epsilon-greedy exploration.</li>
+      <li><b>DDPG:</b> Actor-Critic model for continuous control using steering and throttle.</li>
+    </ul>
+
+    <h4>Simulation Environment</h4>
+    <ul>
+      <li>Built in Pygame with TUM racetracks</li>
+      <li>Vehicle model: Single-track kinematic model</li>
+      <li>Sensors: Simulated LiDAR using ray casting</li>
+      <li>Reward System: Positive reward for forward motion, penalties for collisions, bonus for lap completion</li>
+    </ul>
+
+    <h4>Logging and Visualization</h4>
+    <ul>
+      <li><b>TensorBoard:</b> Tracks reward, loss, and performance curves</li>
+      <li><b>CSV:</b> Logs scores, episode duration, steps, distances</li>
+      <li><b>Visualization:</b> Path plots of vehicle movement using Matplotlib</li>
+    </ul>
+
+    <h5>
+      🔗 <a href="https://github.com/vignesh-balasubramani/autonomous-driving-rl" target="_blank">GitHub Repository</a>
+    </h5>
+
+    <p><a href="/" class="btn teal">← Back to Home</a></p>
+  </div>
+</body>
+</html>
